@@ -1,0 +1,286 @@
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+body {
+  background: white;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.container {
+  width: 95%;
+  /* max-width: 1400px; */
+  margin: 0 auto;
+}
+
+header {
+  background: rgb(26, 22, 22);
+  color: rgb(235,12,144);
+  padding: 1em 0;
+  position: relative;
+}
+
+header::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.logo {
+  float: left;
+  font-size: 1rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.logo span {
+  font-weight: 400;
+}
+
+.site-nav {
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  background: #464655;
+  clip-path: circle(0px at top right);
+  transition: clip-path ease-in-out 700ms;
+
+}
+
+.site-nav--open {
+  clip-path: circle(250% at top right);
+
+}
+
+.site-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav li {
+  border-bottom: 1px solid #575766;
+}
+
+.site-nav li:last-child {
+  border-bottom: none;
+}
+
+.site-nav a {
+  color: rgb(235,12,144);
+  display: block;
+  padding: 2em 4em 2em 1.5em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background: rgb(235,12,144);
+  color: #464655;
+}
+
+.site-nav--icon {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-right: 1em;
+  width: 1.1em;
+  text-align: right;
+  color: rgba(255,255,255,.4);
+}
+
+.menu-toggle {
+  padding: 1em;
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  display: block;
+  background: rgb(235,12,144);
+  height: 3px;
+  width: 1.75em;
+  border-radius: 3px;
+  transition: all ease-in-out 500ms;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+.open .hamburger {
+  transform: rotate(45deg);
+}
+
+.open .hamburger::before {
+  opacity: 0;
+}
+
+.open .hamburger::after {
+  transform: translateY(-3px) rotate(-90deg);
+}
+
+@media (min-width: 950px) {
+  
+  .menu-toggle {
+    display: none;
+  }
+  
+  .site-nav {
+    height: auto;
+    position: relative;
+    background: transparent;
+    float: right;
+    clip-path: initial;
+  }
+  
+  .site-nav li {
+    display: inline-block;
+    border: none;
+    position: relative;
+  }
+  
+  .site-nav a {
+    padding: 0;
+    margin-left: 3em;
+  }
+  
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: transparent;
+    color: white;
+  }
+  
+  .site-nav--icon {
+    display: none !important;
+  }
+
+  .site-nav a::before{
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: rgba(255,255,255,.9);
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+
+.site-nav a:hover::before{
+    width: 80%;
+}
+  
+}
+
+/* flex */
+#sect{
+  text-align: center;
+}
+
+.para{
+  color: rgb(24, 22, 22);
+  
+}
+
+
+.box {
+  min-height: 150px;
+}
+
+.dark_blue {
+  background-image: url(i9.gif);
+  background-size: 750px 300px;
+
+
+}
+
+.light_blue {
+  background-image: url(i10.gif);
+  background-size: 380px 250px;
+}
+
+.red {
+  background-color:rgb(235,12,144);
+  height: 300px;
+}
+/* 
+.lime {
+  height: 300px;
+  background-image: url(i5.jpg);
+} */
+
+.green {
+  background-image: url(i7.jpg);
+  
+}
+
+.orange {
+  background-image: url(twistingcircle2.gif);
+  background-size: 500px 400px;
+  /* background-blend-mode: luminosity ; */
+}
+
+
+
+.tins {
+display: flex;
+flex-wrap: wrap;
+/* margin: 0 -5px; */
+}
+
+
+.box {
+width: 100%;
+/* margin: 0 5px; */
+}
+
+@media screen and (max-width: 450px) {
+  .tins{
+    padding: 1em;
+  }
+ 
+ }
+
+@media screen and (min-width: 450px) {
+  .tins{
+    padding: 1em;
+  }
+  .light_blue, .green {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 550px) {
+.red {
+  width: 33%;
+}
+.orange{
+    width:67%;
+  }
+}
+@media screen and (min-width: 800px) {
+.tins{width:800px;
+ margin-left:auto;
+ margin-right:auto;
+ padding: 3em;}
+}
+@media screen and (min-width:800px) {
+.dark_blue{ order:1;}
+.light_blue{order:4;}
+.green{order:5;}
+.red {order:2;}
+.orange{order:3;}
+}
+
+
+
